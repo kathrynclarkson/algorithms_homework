@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+// 		 Write a function which takes in two arrays and determines if they contain the same number of the same values.
+// [], [] -> true
+// [2, 3, 4], [1, 2, 3] -> false
+// ["a", "c", "b"], ["a", "b", "c"] -> true
+// [1, 1, 1], [1, 1, 1, 1] -> false
+
+function determining (arr1, arr2) {
+	if (arr1.length !== arr2.length)
+		return false;
+	else {
+		arr1 = arr1.sort();
+		arr2 = arr2.sort();
+		for (var i = 0; i < arr1.length; i++) {
+			if (arr1[i]!==arr2[i]) {
+				return false
+			}
+
+		}
+		return true; 
+	}
+}
+
+console.log(determining([], []));
+console.log(determining([2,3,4], [1,2,3]));
+console.log(determining(["a", "c", "b"], ["a", "b", "c"]));
+console.log(determining([1, 1, 1], [1, 1, 1, 1]));
+
+</script>
+</body>
+</html>

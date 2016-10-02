@@ -1,0 +1,43 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<div id="year1"></div>
+	<div id="year2"></div>
+	<div id="year3"></div>
+</head>
+<body>
+ <!-- Write a funciton which, given a year as a number, returns whether that number is a leap year.
+
+2000 -> true
+1900 -> false
+2016 -> true -->
+<script>
+	
+
+	function leapYear (year) {       
+		if ((year % 4==0) && ((year % 100 !==0) || (year % 400==0))) {
+			return true;
+		}
+		else {
+			return false;
+		} 
+
+	}
+	console.log(leapYear(2000))
+	console.log(leapYear(1900))
+	console.log(leapYear(2016))
+
+	document.getElementById('year1').innerHTML = leapYear(2000)
+	document.getElementById('year2').innerHTML = leapYear(1900)
+	document.getElementById('year3').innerHTML = leapYear(2016)
+</script>
+
+</body>
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+// 	Write a function which takes an array of integers > 0 and returns the first integer which does not appear in that array.
+// [1,2,5] -> 3
+// [1,2,3,4,5] -> 6
+// [3,4,5] -> 1
+//go through each number in the array, i ++ will go through each array and will return the first integer that does not appear in that array. 
+function integer(arr){
+	
+	for (var i = 1; i <= arr.length + 1; i++) {
+		if (i !== arr[i-1]) {
+			return i;
+		}
+	}
+}
+
+console.log("Should print 3: " + integer([1,2,4]));
+console.log("Should print 4: " + integer([1,2,3]));
+console.log("Should print 1: " + integer([2,3]));
+
+
+</script>
+
+</body>
+</html>

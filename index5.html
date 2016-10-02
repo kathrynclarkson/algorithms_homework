@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+//  <!-- Write function that translates a text to Pig Latin and back. English is translated to Pig Latin by taking the first letter of every word, moving it to the end of the word and adding "ay".
+
+// "The quick brown fox" -> "Hetay uickqay rownbay oxfay". -->
+
+String.prototype.capitalizeFirstLetter = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+function translator(string) {
+	// create new string
+	var newString = "";
+
+	// 1. convert string to an array of words
+	// hint: use .split(" ") method
+	var stringArr = string.split(" ");
+	// now we have something like this ["the", "quick", 'brown' ...]
+
+	for (var i = 0; i < stringArr.length; i++) {
+		var oldWord = stringArr[i];
+		var newWord = "";
+
+		newWord = oldWord.substring(1, oldWord.length)
+		newWord += oldWord[0] + 'ay '
+		newWord = newWord.toLowerCase();
+
+
+		newString += newWord + " ";
+	}
+
+
+
+	return newString.capitalizeFirstLetter().trim()
+}
+
+if (translator("The quick brown fox") === "Hetay uickqay rownbay oxfay") {
+	console.log("Success!");
+} else {
+	console.log("This: " + translator("The quick brown fox") + " \nshould equal this: Hetay uickqay rownbay oxfay")
+}
+
+</script>
+</body>
+</html>
